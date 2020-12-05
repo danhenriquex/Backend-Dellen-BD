@@ -1,0 +1,32 @@
+{
+  "name": "backend_dellen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrew-Figueiredo/backend_dellen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrew-Figueiredo/backend_dellen/issues"
+  },
+  "homepage": "https://github.com/Andrew-Figueiredo/backend_dellen#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotnet": "^1.1.4",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.1",
+    "postgres": "^1.0.2",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {}
+}
