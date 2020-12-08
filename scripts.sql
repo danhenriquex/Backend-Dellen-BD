@@ -83,5 +83,5 @@ INSERT INTO product (id_category,name,price,quantity,brand,genre,age_range,image
     'marca',
     'gênero',
     '12-15',
-    'image_adress'
+    'https://static.netshoes.com.br/produtos/tenis-adidas-coreracer-masculino/88/NQQ-4635-088/NQQ-4635-088_zoom2.jpg?ts=1594308047&ims=326x'
 );

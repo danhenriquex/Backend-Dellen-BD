@@ -13,6 +13,7 @@ routes.get('/users',UserController.get_clients)
 routes.post('/users',UserController.create_user)
 routes.put('/users',UserController.update_user)
 routes.post('/client',UserController.get_client)
+routes.get('/get_client_order',OrderController.get_client_order)
 
 //Seller
 routes.get('/sellers',UserController.get_sellers)
@@ -30,5 +31,5 @@ routes.put('/products/:category',ProductController.products_by_category)
 //compras
 routes.post('/order',OrderController.create_order)
 routes.get('/order',OrderController.get_orders)
-routes.get('/total',OrderController.total_amount)
+routes.get('/total/:id_sale',OrderController.total_amount)
 module.exports = routes;
