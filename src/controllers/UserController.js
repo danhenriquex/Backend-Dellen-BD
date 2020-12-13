@@ -2,7 +2,7 @@ const db = require('../database/connection');
 
 module.exports = {
     async get_clients(req,res){
-        const sql = "SELECT * from public.client";
+        const sql = "SELECT * from client";
         
         try{
             const response = await db.query(sql);
@@ -96,6 +96,39 @@ module.exports = {
             });
         }catch(e){
             res.status(500).json(e.detail);
+        }
+    },
+
+    async get_by_id(req, res){
+
+        var sql = "SELECT * FROM client WHERE id = $1";
+        const id = req.params.id;
+
+        try {
+            const response = await db.query(
+                sql,
+                [id]
+            );
+            res.send(response.rows);
+            
+        }catch(e){
+            res.status(500).json(e.datail);
+        }
+    },
+
+    async get_seller_by_id(req, res){
+        
+        var sql = "SELECT * FROM seller where id=$1";
+        const id = req.params.id;
+
+        try {
+            const response = await db.query(
+                sql,
+                [id]
+            );
+            res.send(response.rows);
+        }catch(e){
+            res.status(500).json(e.datail);
         }
     }
 }

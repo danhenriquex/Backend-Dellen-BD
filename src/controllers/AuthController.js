@@ -31,5 +31,31 @@ const auth_seller = async (email,password)=>{
 }
 module.exports = {
     auth_client,
-    auth_seller
+    auth_seller,
+    async login(req, res){
+        
+        const {email, password} = req.body;
+        console.log({email, password});
+        
+        let rows = await db.query(
+            'SELECT * FROM client WHERE email=$1 AND password=$2',
+            [email, password]
+        );
+
+        let type = 1;
+
+        if(!rows.rows.length){
+            type = 0;
+            rows = await db.query(
+                'SELECT * FROM seller WHERE email=$1 AND password=$2',
+                [email, password]
+            );
+        }
+
+        res.status(200).json({
+            "type": type,
+            "data": rows.rows
+        })
+       
+    },
 }
